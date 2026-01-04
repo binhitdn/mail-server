@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14Study - Mail Tạm Thời Miễn Phí</title>
+    <meta name="description" content="Dịch vụ email tạm thời miễn phí, an toàn và nhanh chóng.">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-bolt"></i>
+                <span>14Study Mail</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="active">Trang chủ</a>
+                <a href="https://github.com/binhitdn/mail-server" target="_blank">Github</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="hero">
+            <h1>Email tạm thời của bạn</h1>
+            <p>Sử dụng email này để đăng ký tài khoản mà không sợ bị spam.</p>
+            
+            <div class="email-generator-card">
+                <div class="email-input-wrapper">
+                    <input type="text" id="email-address" readonly value="Đang tạo...">
+                    <button id="btn-copy" title="Sao chép">
+                        <i class="far fa-copy"></i>
+                        <span>Copy</span>
+                    </button>
+                    <button id="btn-refresh-manual" title="Đổi email mới">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+                <div class="status-indicator">
+                    <span class="pulse"></span>
+                    <span id="update-status">Hộp thư tự động cập nhật sau 5s</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="inbox-section">
+            <div class="section-header">
+                <h2>Hộp thư đến</h2>
+                <div id="loader" class="hidden"><i class="fas fa-circle-notch fa-spin"></i></div>
+            </div>
+
+            <div id="inbox-list" class="inbox-list">
+                <div class="empty-state">
+                    <i class="fas fa-envelope-open-text"></i>
+                    <p>Chưa có thư nào. Hãy dùng mail trên để nhận thư!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Xem Thư -->
+    <div id="email-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="sender-info">
+                    <h3 id="modal-subject">Tiêu đề email</h3>
+                    <p id="modal-meta">Từ: sender@example.com</p>
+                </div>
+                <button class="btn-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body" id="modal-content">
+                <!-- Nội dung email sẽ hiển thị ở đây -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

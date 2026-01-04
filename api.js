@@ -7,6 +7,7 @@ const HTTP_PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static('public'));
 
 // Get all emails (for debugging/admin)
 app.get('/api/emails', (req, res) => {
