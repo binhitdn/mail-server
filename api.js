@@ -8,6 +8,18 @@ const HTTP_PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
+// Get all emails (for debugging/admin)
+app.get('/api/emails', (req, res) => {
+    const query = `SELECT id, sender, recipient, subject, received_at FROM emails ORDER BY received_at DESC`;
+    db.all(query, [], (err, rows) => {
+        if (err) {
+            res.status(500).json({ error: err.message });
+            return;
+        }
+        res.json({ emails: rows });
+    });
+});
+
 // Get all emails for a specific address
 app.get('/api/inbox/:address', (req, res) => {
     const address = req.params.address;
