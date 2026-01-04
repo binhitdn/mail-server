@@ -1,0 +1,23 @@
+{
+  "name": "temp-mail-backend",
+  "version": "1.0.0",
+  "description": "This is a complete backend for a temporary email service. It includes:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "mailparser": "^3.9.1",
+    "nodemon": "^3.1.11",
+    "smtp-server": "^3.18.0",
+    "sqlite3": "^5.1.7"
+  }
+}
